@@ -70,23 +70,38 @@ const main = async () => {
             content: "this is content...",
             authorId: 1,
             postCategory: {
-                create: {
-categoryId:2
 
-                    // category: {
-                        
-                    //     connect:
-                    //     {
-                    //         id: 3
-                    //     }
+                create: [
+                    {
+                        categoryId: 1
+                    },
+                    {
+                        categoryId: 2
+                    },
+                    {
+                        categoryId: 3
+                    }
+                ]
 
-                    // }
-                }
+
+
+                // create: {
+                //     categoryId: 2
+
+                //     category: {
+
+                //         connect:
+                //         {
+                //             id: 3
+                //         }
+
+                //     }
+                // }
             }
 
         },
-        include:{
-            postCategory:true
+        include: {
+            postCategory: true
         }
     })
 
