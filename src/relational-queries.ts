@@ -13,16 +13,24 @@ const relationalQueries = async()=>{
 
 
 
-
-    // mongoose populate style
     const userDataWithHisPost = await prisma.user.findUnique({
         where:{
-            id:1
-        },
-        include:{
-            post:true
+            id:3
         }
-    })
+    }).profile()
+
+
+
+
+    // mongoose populate style
+    // const userDataWithHisPost = await prisma.user.findUnique({
+    //     where:{
+    //         id:3
+    //     },
+    //     include:{
+    //         post:true
+    //     }
+    // })
     console.log(userDataWithHisPost);
 }
 
