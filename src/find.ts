@@ -4,11 +4,11 @@ const prisma = new PrismaClient();
 const main = async()=>{
 // find all
 
-const findAll = await prisma.post.findMany({
-    select:{
-        authorName:true
-    }
-})
+// const findAll = await prisma.post.findMany({
+//     select:{
+//         authorName:true
+//     }
+// })
 
 
 
@@ -38,7 +38,7 @@ const findUnique =await prisma.post.findUniqueOrThrow({
 
 
 const getAllDataFromDB = await prisma.post.findMany()
-console.log({findAll});
+// console.log({findAll});
 
 }
 
