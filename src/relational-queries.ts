@@ -2,7 +2,7 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-const relationalQueries = async()=>{
+const relationalQueries = async () => {
     // fluent api
     // find user data with his all post
     // const userDataWithHisPost = await prisma.user.findUnique({
@@ -13,11 +13,11 @@ const relationalQueries = async()=>{
 
 
 
-    const userDataWithHisPost = await prisma.user.findUnique({
-        where:{
-            id:3
-        }
-    }).profile()
+    // const userDataWithHisPost = await prisma.user.findUnique({
+    //     where:{
+    //         id:3
+    //     }
+    // }).profile()
 
 
 
@@ -31,7 +31,43 @@ const relationalQueries = async()=>{
     //         post:true
     //     }
     // })
-    console.log(userDataWithHisPost);
+
+
+
+
+
+
+    // relational filters
+
+//     const punlishedPostsByUser = await prisma.user.findMany({
+//         include: {
+//             post: {
+//                 where:{
+//                     published:true
+//                 }
+//             }
+//         }
+
+//     })
+
+// to see object object data=>
+// console.dir(punlishedPostsByUser,{depth:Infinity});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 relationalQueries()
