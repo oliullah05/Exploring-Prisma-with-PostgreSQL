@@ -4,7 +4,7 @@ const prisma = new PrismaClient();
 
 
 const filtering = async () => {
-    
+
     const andFiltering = await prisma.post.findMany({
         where: {
             AND: [
@@ -38,7 +38,35 @@ const filtering = async () => {
         }
     })
 
-    console.log(orFiltering);
+
+
+
+
+const notFiltering = await prisma.post.findMany({
+    where:{
+        NOT:[
+            {
+                title:{
+                    contains:"this"
+                }
+            }
+        ]
+    }
+})
+
+
+
+
+const startsWith = await prisma.user.findMany({
+    where:{
+        email:{
+            startsWith:"user1"
+        }
+    }
+})
+
+
+    console.log(startsWith);
 }
 
 filtering()
