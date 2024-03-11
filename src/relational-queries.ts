@@ -12,13 +12,11 @@ const relationalQueries = async () => {
     // }).post()
 
 
-
     // const userDataWithHisPost = await prisma.user.findUnique({
     //     where:{
     //         id:3
     //     }
     // }).profile()
-
 
 
 
@@ -37,7 +35,14 @@ const relationalQueries = async () => {
 
 
 
-    // relational filters
+
+
+
+
+
+
+
+                                     // relational filters
 
 //     const punlishedPostsByUser = await prisma.user.findMany({
 //         include: {
@@ -52,19 +57,6 @@ const relationalQueries = async () => {
 
 // to see object object data=>
 // console.dir(punlishedPostsByUser,{depth:Infinity});
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
