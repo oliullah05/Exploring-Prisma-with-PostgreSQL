@@ -11,42 +11,46 @@ const aggregates = async () => {
         }
     })
 
-// sum of ages
+    // sum of ages
 
-const sumOfAges = await prisma.user.aggregate({
-    _sum: {
-        age: true
-    }
-})
-
-
-// count of all table data 
-const countData = await prisma.user.aggregate({
-    _count: {
-    //    _all:true,
-       age:true
-    }
-})
-
-// count of all table data another way
-const countDataAnotherWay = await prisma.user.count()
+    const sumOfAges = await prisma.user.aggregate({
+        _sum: {
+            age: true
+        }
+    })
 
 
+    // count of all table data 
+    const countDataByAnyField = await prisma.post.aggregate({
+        _count: {
+            //    _all:true,
+            //    age:true
+            title: true
+        },
+        where: {
+            published: true
+        }
+    })
 
-// find max age
-const maxAge = await prisma.user.aggregate({
-    _max: {
-       age:true
-    }
-})
+    // count of all table data another way
+    const countDataAnotherWay = await prisma.user.count()
 
 
-// find min age
-const minAge = await prisma.user.aggregate({
-    _min: {
-       age:true
-    }
-})
+
+    // find max age
+    const maxAge = await prisma.user.aggregate({
+        _max: {
+            age: true
+        }
+    })
+
+
+    // find min age
+    const minAge = await prisma.user.aggregate({
+        _min: {
+            age: true
+        }
+    })
 
     console.log(minAge);
 }
