@@ -7,6 +7,8 @@ const getAllPosts = await prisma.$queryRaw `select * from posts`
 
 // delete all users forcefully
 
+
+
 await prisma.$queryRaw`TRUNCATE table "users" cascade`
 await prisma.$queryRaw`TRUNCATE table "categories" cascade`
 

@@ -1,0 +1,7 @@
+see all command = npx prisma
+genarted prisma client = npx prisma generate
+check model valid or not = npx prisma validate
+format = npx prisma format
+print schema from db = npx prisma db pull --print
+update schema from db = npx prisma db pull
+schema send to databse but don't want migrate = npx prisma db push
